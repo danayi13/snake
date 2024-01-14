@@ -5,7 +5,7 @@ pygame.init()
 pygame.display.set_caption('Snake by Dana')
 screen = pygame.display.set_mode((BOARD_SIZE, BOARD_SIZE))
 
-snake = [(10, 10)]
+snake = [(15, 15), (15, 16), (15, 17)]
 direction = Direction.UP
 
 # GAMEPLAY LOGIC
@@ -32,5 +32,5 @@ while True:
     update_snake(snake, direction)
     draw_snake(screen, snake)
 
-    pygame.display.flip()
+    pygame.display.update()
     pygame.time.wait(REFRESH_MS)
