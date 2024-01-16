@@ -1,6 +1,6 @@
 from board_logic import *
 
-def draw_snake(screen, snake):
+def draw_snake(screen, snake: []):
     if snake[0] in snake[1:]:
         game_over(screen)
 
@@ -11,8 +11,7 @@ def draw_snake(screen, snake):
     for row, col in snake[1:]:
         draw_piece(screen, row, col, SNAKE_COLOR)
 
-
-def update_snake(snake, direction, food_collision):
+def update_snake(snake: [], direction: Enum, food_collision: bool):
     if not food_collision:
         snake.pop()
     head_row, head_col = snake[0]
